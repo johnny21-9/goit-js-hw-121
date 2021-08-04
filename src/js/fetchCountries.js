@@ -8,8 +8,8 @@ export default class ApiCountries {
       const params = "?fields=;name;capital;population;flag;languages;"
     return fetch(`${BASE_URL}/${this.searchQuery}?fields=${this.name}${params}`).then(
     (response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
+        if (!response.ok) {
+          throw new Error(response.status);
         }
  
       return response.json();

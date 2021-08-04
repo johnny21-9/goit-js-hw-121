@@ -11,6 +11,10 @@ const listElement = document.querySelector(".country-list");
 const infoElement = document.querySelector(".country-info");
 
 searchElement.addEventListener('input', debounce((e) => {
+    if (!searchElement.value.trim()) {
+        return;
+    }
+
     apiCountries.query = searchElement.value;
     
     apiCountries.fetchCountries()
